@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>menu de comida</title>
+
+</head>
+<body >
+<h1>Menu de comida</h1>
+<h2>Month of June</h2>
+
+<table BORDER CELLPADDING=4>
+<tr>
+<th> Day </th><th>Comida principal</th><th> acompañamiento </th><th> postre </th>
+</tr>
+<tr><td><div id='day0'></div></td><td><div id='maindish0'></div></td><td><div id='sidedish0'></div></td><td><div id='postre0'></div></td><tr>
+<tr><td><div id='day1'></div></td><td><div id='maindish1'></div></td><td><div id='sidedish1'></div></td><td><div id='postre1'></div></td><tr>
+<tr><td><div id='day2'></div></td><td><div id='maindish2'></div></td><td><div id='sidedish2'></div></td><td><div id='postre2'></div></td><tr>
+<tr><td><div id='day3'></div></td><td><div id='maindish3'></div></td><td><div id='sidedish3'></div></td><td><div id='postre3'></div></td><tr>
+<tr><td><div id='day4'></div></td><td><div id='maindish4'></div></td><td><div id='sidedish4'></div></td><td><div id='postre4'></div></td><tr>
+<tr><td><div id='day5'></div></td><td><div id='maindish5'></div></td><td><div id='sidedish5'></div></td><td><div id='postre5'></div></td><tr>
+<tr><td><div id='day6'></div></td><td><div id='maindish6'></div></td><td><div id='sidedish6'></div></td><td><div id='postre6'></div></td><tr>
+</table>
+<br><br>
+<BUTTON name="reset" type="reset" value="cucaracha" onclick="pija()">Que cocino?</BUTTON>
+<script>
+function pija(){
+ var mydate = new Date();
+var rand_no;
+for (x=0;x<7;x++){
+   document.getElementById('day'+x).innerHTML=mydate.getDate()+x;
+rand_no = Math.random();
+rand_no = rand_no * 15;
+rand_no = Math.ceil(rand_no);
+//alert(rand_no);
+
+
+maind(rand_no-1,x);
+if (rand_no > 4){
+rand_no = Math.random() * 11;
+rand_no = Math.ceil(rand_no);
+sided(rand_no-1,x);
+}
+else{
+if (rand_no == 1)
+   document.getElementById('sidedish'+x).innerHTML="con carne picada";
+
+else
+  document.getElementById('sidedish'+x).innerHTML="_";
+}
+
+rand_no = Math.ceil(Math.random() * 7);
+
+postre(rand_no-1,x);
+
+}
+
+return 0;
+}
+
+function maind(index, rownum){
+
+comidas = ["fideos", "puchero","hamburguesas","arroz frito","milanesa de carne","milanesa de pollo","churrasco","pescado a la plancha","pescado en milanesa","pollo al horno", "pan de carne", "medallones de chancho", "pollo hindu", "repollo relleno", "pastel de papa"];
+document.getElementById('maindish' + rownum).innerHTML=comidas[index];
+}
+
+function sided(index, rownum){
+
+comidas = ["ensalada de tomate","ensalada de espinaca con garbanzo","ensalada de zanahorias","ensalada de lechuga y tomate",
+           "pastelitos de verdura","zuchinni saltados", "papas al horno","pure de papas y zapallo",
+           "arroz", "couscous", "berenjena con tomate y jamon", "brocoli", "coliflor"];
+document.getElementById('sidedish' + rownum).innerHTML=comidas[index];
+}
+
+function postre(index, rownum){
+
+
+comidas = ["fruta","gelatina","fruta","duraznos en almibar","fruta","frutillas","fruta" ];
+document.getElementById('postre' + rownum).innerHTML=comidas[index];
+}
+
+
+</script>
+</body>
+</html>
