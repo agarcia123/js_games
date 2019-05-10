@@ -1,19 +1,9 @@
-﻿table#xxx {
-                  width:100%;
+
+            td#approval25  {
+                  color: white;
+                  background-color: #f2f200;
               }
 
-             table#approval25 td {
-                  bgColor:"#FF0000";
-                  color: white;
-              }
-             table#xyz1  tr {
-                  background-color:  blue;
-              }
-             table#approval75 td {
-                  background-color: red;
-                  color: white;
-             }
-            table#approval100 td {
-                 background-color: red;
-                color: white;
-             }
+            p {
+              padding: 10px; 
+            }
